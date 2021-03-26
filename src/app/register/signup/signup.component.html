@@ -1,0 +1,50 @@
+<form action="" >
+    <div>
+        <label for="">Name</label>
+    </div>
+        <input type="text" name="username" class="form-control"  [(ngModel)]=model.username ><br>
+        <div>
+            <label for="">Email</label>
+        </div>
+        <input type="text" name="email" class="form-control"  [(ngModel)]=model.email ><br>
+        <div>
+            <label for="">Mobile</label>
+        </div>
+        <div>
+            <input type="text" name="mobile" class="form-control"  [(ngModel)]=model.mobile ><br>
+        </div>
+           
+            <div>
+                <label for="">Password</label>
+            </div>
+            <div>
+            <input type="password" name="password" class="form-control"  [(ngModel)]=model.password ><br>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="reg()">register</button>      
+</form>
+<button >update</button>
+
+    <style>
+        table,th,td{border: 1px solid black;border-collapse: collapse;padding: 3px;}
+        </style>
+        <table border="1px" style="width:50%;" >
+            <thead>
+                <th>id</th>
+                <th>username</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>password</th>
+                <th>edit</th>
+                <th>delete</th>
+            </thead>
+<tr *ngFor ="let arr of registerlist" >
+    <td>{{arr.id}}</td>
+    <td>{{arr.username}}</td>
+    <td>{{arr.email}}</td>
+    <td>{{arr.mobile}}</td>
+    <td>{{arr.password}}</td>
+    <td><button (click)="edit(arr)" >edit</button></td>
+    <td><button (click)="delete(arr)">delete</button></td>
+</tr>
+</table>
+<button (click)="logout()">Logout</button>
